@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万物互联、极致体验</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
+            background: #fff;
+            color: #000;
+            padding: 30px 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 主标题 - 书法风格带阴影 */
+        .main-title {
+            text-align: center;
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 45px;
+            color: #000;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            letter-spacing: 4px;
+            font-family: 'STXingkai', 'KaiTi', 'Microsoft YaHei', cursive;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .content-block {
+            flex: 1;
+            text-align: center;
+        }
+
+        .icon-wrapper {
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon-wrapper img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .content-text {
+            font-size: 15px;
+            line-height: 1.9;
+            text-align: justify;
+            color: #000;
+        }
+
+        /* 平台支持区域 */
+        .platform-section {
+            margin-top: 60px;
+        }
+
+        .platform-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 35px;
+            color: #000;
+        }
+
+        .platform-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .platform-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .platform-icon {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .platform-icon img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .platform-label {
+            font-size: 13px;
+            color: #000;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+                gap: 35px;
+            }
+
+            .platform-grid {
+                flex-wrap: wrap;
+            }
+
+            .platform-item {
+                flex: 0 0 45%;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 主标题 -->
+        <h1 class="main-title">万物互联、极致体验</h1>
+
+        <!-- 内容区域 -->
+        <div class="content-section">
+            <!-- 左侧内容块 - HTML5 -->
+            <div class="content-block">
+                <div class="icon-wrapper">
+                    <img src="html5-icon.png" alt="HTML5">
+                </div>
+                <div class="content-text">
+                    【HTML5】HTML5不仅仅是HTML规范的当前最新版本，HTML5进化的重大意义还在于HTML5从技术层面带来了八个类别的革新。HTML5规范以"用户至上"为宗旨。也就是说在遇到冲突时，规范的优先级为：用户&gt;页面作者&gt;实现者（浏览器）&gt;规范开发者（W3C/WHATWG）&gt;纯理论。除此以外，HTML5还引入了一种新的安全模型来保证HTML5足够安全。
+                </div>
+            </div>
+
+            <!-- 右侧内容块 - CSS3 -->
+            <div class="content-block">
+                <div class="icon-wrapper">
+                    <img src="css3-icon.png" alt="CSS3">
+                </div>
+                <div class="content-text">
+                    【HTML5】HTML5不仅仅是HTML规范的当前最新版本，HTML5进化的重大意义还在于HTML5从技术层面带来了八个类别的革新。HTML5规范以"用户至上"为宗旨。也就是说在遇到冲突时，规范的优先级为：用户&gt;页面作者&gt;实现者（浏览器）&gt;规范开发者（W3C/WHATWG）&gt;纯理论。除此以外，HTML5还引入了一种新的安全模型来保证HTML5足够安全。
+                </div>
+            </div>
+        </div>
+
+        <!-- 平台支持区域 -->
+        <div class="platform-section">
+            <h2 class="platform-title">平台支持</h2>
+            <div class="platform-grid">
+                <!-- 原生移动APP开发 -->
+                <div class="platform-item">
+                    <div class="platform-icon">
+                        <img src="apple-icon.png" alt="Apple">
+                    </div>
+                    <div class="platform-label">原生移动APP开发</div>
+                </div>
+
+                <!-- 微信公众平台开发 -->
+                <div class="platform-item">
+                    <div class="platform-icon">
+                        <img src="wechat-icon.png" alt="WeChat">
+                    </div>
+                    <div class="platform-label">微信公众平台开发</div>
+                </div>
+
+                <!-- 网站开发 -->
+                <div class="platform-item">
+                    <div class="platform-icon">
+                        <img src="monitor-icon.png" alt="Monitor">
+                    </div>
+                    <div class="platform-label">网站开发</div>
+                </div>
+
+                <!-- 桌面应用开发 -->
+                <div class="platform-item">
+                    <div class="platform-icon">
+                        <img src="laptop-icon.png" alt="Laptop">
+                    </div>
+                    <div class="platform-label">桌面应用开发</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
