@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI助教答疑平台 - 注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group label .required {
+            color: #ff4d4f;
+            margin-left: 3px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input:valid:not(:placeholder-shown) {
+            border-color: #52c41a;
+        }
+
+        .form-group input:invalid:not(:placeholder-shown) {
+            border-color: #ff4d4f;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .btn-register {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-register:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #ff4d4f;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        input:invalid:not(:placeholder-shown) ~ .error-message {
+            display: block;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .agreement {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .agreement input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 2px;
+            accent-color: #667eea;
+        }
+
+        .agreement a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .agreement a:hover {
+            text-decoration: underline;
+        }
+
+        .password-strength {
+            height: 4px;
+            background: #e8e8e8;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .password-strength .strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .strength-text {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🤖</div>
+            <h1>AI助教答疑平台</h1>
+            <p>创建账号，开启智能学习之旅</p>
+        </div>
+
+        <form id="registerForm" action="#" method="POST" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nickname">昵称<span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="nickname" 
+                        name="nickname" 
+                        placeholder="请输入昵称"
+                        required
+                        autocomplete="nickname"
+                        autofocus
+                        minlength="2"
+                        maxlength="20"
+                        pattern="[\u4e00-\u9fa5a-zA-Z0-9]+"
+                        title="昵称只能包含中文、字母和数字"
+                    >
+                    <span class="error-message">昵称需2-20个字符，仅支持中文、字母和数字</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">用户名<span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="请输入用户名"
+                        required
+                        autocomplete="username"
+                        minlength="4"
+                        maxlength="16"
+                        pattern="[a-zA-Z0-9_]+"
+                        title="用户名只能包含字母、数字和下划线"
+                    >
+                    <span class="error-message">用户名需4-16个字符，仅支持字母、数字和下划线</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">邮箱<span class="required">*</span></label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="example@email.com"
+                    required
+                    autocomplete="email"
+                >
+                <span class="error-message">请输入有效的邮箱地址</span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">手机号</label>
+                <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="请输入手机号码（选填）"
+                    pattern="^1[3-9]\d{9}$"
+                    title="请输入有效的11位手机号码"
+                    autocomplete="tel"
+                >
+                <span class="error-message">请输入有效的11位手机号码</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">密码<span class="required">*</span></label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="请设置密码"
+                        required
+                        autocomplete="new-password"
+                        minlength="8"
+                        maxlength="20"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$"
+                        title="密码需8-20位，包含大小写字母和数字"
+                    >
+                    <div class="password-strength">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">密码强度：弱</div>
+                    <span class="error-message">密码需8-20位，包含大小写字母和数字</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码<span class="required">*</span></label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="请再次输入密码"
+                        required
+                        autocomplete="new-password"
+                        minlength="8"
+                        maxlength="20"
+                    >
+                    <span class="error-message">两次输入的密码不一致</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="grade">年级<span class="required">*</span></label>
+                    <select id="grade" name="grade" required>
+                        <option value="" disabled selected>请选择年级</option>
+                        <option value="freshman">大一</option>
+                        <option value="sophomore">大二</option>
+                        <option value="junior">大三</option>
+                        <option value="senior">大四</option>
+                        <option value="graduate">研究生</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="major">专业方向</label>
+                    <input 
+                        type="text" 
+                        id="major" 
+                        name="major" 
+                        placeholder="如：计算机科学"
+                        list="majorList"
+                        autocomplete="organization"
+                    >
+                    <datalist id="majorList">
+                        <option value="计算机科学">
+                        <option value="软件工程">
+                        <option value="人工智能">
+                        <option value="数据科学">
+                        <option value="网络安全">
+                        <option value="物联网工程">
+                        <option value="电子信息">
+                        <option value="自动化">
+                    </datalist>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="birthday">出生日期</label>
+                <input 
+                    type="date" 
+                    id="birthday" 
+                    name="birthday"
+                    min="1990-01-01"
+                    max="2010-12-31"
+                >
+            </div>
+
+            <div class="agreement">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">我已阅读并同意<a href="#">《用户服务协议》</a>和<a href="#">《隐私政策》</a></label>
+            </div>
+
+            <button type="submit" class="btn-register">注册</button>
+        </form>
+
+        <div class="footer">
+            已有账号？<a href="login.html">立即登录</a>
+        </div>
+    </div>
+
+    <script>
+        // 密码强度检测
+        const passwordInput = document.getElementById('password');
+        const strengthBar = document.getElementById('strengthBar');
+        const strengthText = document.getElementById('strengthText');
+
+        passwordInput.addEventListener('input', function() {
+            const password = this.value;
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (password.length >= 12) strength++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if (/\d/.test(password)) strength++;
+            if (/[^a-zA-Z0-9]/.test(password)) strength++;
+
+            const strengthLevels = [
+                { width: '20%', color: '#ff4d4f', text: '弱' },
+                { width: '40%', color: '#fa8c16', text: '较弱' },
+                { width: '60%', color: '#fadb14', text: '中等' },
+                { width: '80%', color: '#52c41a', text: '强' },
+                { width: '100%', color: '#13c2c2', text: '很强' }
+            ];
+
+            const level = strengthLevels[Math.min(strength, 4)];
+            strengthBar.style.width = level.width;
+            strengthBar.style.background = level.color;
+            strengthText.textContent = `密码强度：${level.text}`;
+        });
+
+        // 表单提交验证
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const agree = document.getElementById('agree').checked;
+
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致，请重新输入');
+                return;
+            }
+
+            if (!agree) {
+                alert('请先阅读并同意用户服务协议和隐私政策');
+                return;
+            }
+
+            alert('注册成功！欢迎加入AI助教答疑平台');
+        });
+    </script>
+</body>
+</html>
